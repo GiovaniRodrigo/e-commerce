@@ -1,135 +1,61 @@
 <template>
-  <div class="login-container">
-    <div class="logo">LOGO</div>
+  <div class="home-page">
+    <!-- Topbar -->
+    <header class="topbar flex justify-between items-center p-4 bg-gray-100">
+      <div class="logo font-bold text-xl">LOGO</div>
+      <input type="text" placeholder="Pesquisar..." class="search border p-2 rounded" />
+      <div class="cart">🛒 Carrinho</div>
+    </header>
 
-    <form @submit.prevent="handleLogin" class="login-form">
-      <input
-        type="email"
-        v-model="email"
-        placeholder="Email"
-        required
-      />
-      <input
-        type="password"
-        v-model="senha"
-        placeholder="Senha"
-        required
-      />
-      <button type="submit">Login</button>
-    </form>
+    <!-- Navbar -->
+    <nav class="navbar bg-gray-200 p-3">
+      <ul class="flex space-x-4">
+        <li class="category">Categoria 1</li>
+        <li class="category">Categoria 2</li>
+        <li class="category">Categoria 3</li>
+        <li class="category">Categoria 4</li>
+      </ul>
+    </nav>
 
-    <div class="links">
-      <p>Não tem conta? <a href="#" @click.prevent="cadastreSe">Cadastre-se</a></p>
-      <p>Esqueceu a senha? <a href="#" @click.prevent="recuperarSenha">Recuperar</a></p>
-    </div>
+    <!-- Banner Principal -->
+    <section
+      class="banner bg-blue-300 h-48 flex items-center justify-center text-white text-2xl font-bold my-4"
+    >
+      Banner Principal / Promoção
+    </section>
 
-    <div class="social-login">
-      <button @click="loginGoogle">G</button>
-      <button @click="loginFacebook">f</button>
-    </div>
+    <!-- Seção: Produtos em Destaque -->
+    <section class="featured-products my-4">
+      <h2 class="text-xl font-bold mb-2">Produtos em Destaque</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="product-card p-4 border rounded text-center">Card Produto 1</div>
+        <div class="product-card p-4 border rounded text-center">Card Produto 2</div>
+      </div>
+    </section>
+
+    <!-- Seção: Novidades / Ofertas -->
+    <section class="new-offers my-4">
+      <h2 class="text-xl font-bold mb-2">Novidades / Ofertas</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="product-card p-4 border rounded text-center">Card Produto 3</div>
+        <div class="product-card p-4 border rounded text-center">Card Produto 4</div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 export default {
-  name: "LoginPage",
-  data() {
-    return {
-      email: "",
-      senha: "",
-    };
-  },
-  methods: {
-    handleLogin() {
-      console.log("Email:", this.email);
-      console.log("Senha:", this.senha);
-      // Aqui você adicionaria a lógica de login
-    },
-    cadastreSe() {
-      console.log("Redirecionar para cadastro");
-    },
-    recuperarSenha() {
-      console.log("Redirecionar para recuperação de senha");
-    },
-    loginGoogle() {
-      console.log("Login com Google");
-    },
-    loginFacebook() {
-      console.log("Login com Facebook");
-    },
-  },
+  name: "Home",
 };
 </script>
 
 <style scoped>
-.login-container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  background-color: #fff;
-  text-align: center;
+.topbar input {
+  width: 200px;
 }
 
-.logo {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-.login-form input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
-.login-form button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  border: none;
-  border-radius: 6px;
-  background-color: #ccc;
-  font-size: 16px;
-  font-weight: bold;
+.category {
   cursor: pointer;
-}
-
-.login-form button:hover {
-  background-color: #bbb;
-}
-
-.links p {
-  margin: 10px 0;
-  font-size: 14px;
-}
-
-.links a {
-  color: #007bff;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.social-login {
-  margin-top: 20px;
-}
-
-.social-login button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin: 0 10px;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  background-color: #eee;
-}
-
-.social-login button:hover {
-  background-color: #ddd;
 }
 </style>

@@ -40,7 +40,9 @@
 				"xdebug.php-pack",
 				"onecentlin.laravel-extension-pack",
                 "devsense.phptools-vscode",
-                "bmewburn.vscode-intelephense-client"
+                "bmewburn.vscode-intelephense-client",
+                "vue.volar",
+                "wscats.vue"
 			]
 		}
 	}
