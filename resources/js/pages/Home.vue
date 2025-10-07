@@ -4,7 +4,14 @@
     <header class="topbar flex justify-between items-center p-4 bg-gray-100">
       <div class="logo font-bold text-xl">LOGO</div>
       <input type="text" placeholder="Pesquisar..." class="search border p-2 rounded" />
-      <div class="cart">🛒 Carrinho</div>
+
+      <div class="flex gap-3">
+        <div class="cart">🛒 Carrinho</div>
+        <div class="cart">|</div>
+        <div class="cart">
+          <a href="/login">Login</a>
+        </div>
+      </div>
     </header>
 
     <!-- Navbar -->
