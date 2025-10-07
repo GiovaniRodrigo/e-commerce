@@ -24,4 +24,8 @@ export default defineConfig({
             formVariants: true,
         }),
     ],
+    server: {
+        host: true,  // escuta 0.0.0.0
+        port: 5173
+    }
 });

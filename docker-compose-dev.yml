@@ -1,6 +1,5 @@
 services:
   app:
-    image: php:8.2.29-fpm
     build:
       context: .
       dockerfile: ./.docker/app/Dockerfile
@@ -8,20 +7,11 @@ services:
       - ./:/var/www/html
     networks:
       - prova_pleno
-
-  proxy:
-    image: nginx:stable
-    build:
-      context: .
-      dockerfile: ./.docker/nginx/Dockerfile
-    networks:
-      - prova_pleno
     ports:
-      - '80:80'
-    volumes:
-      - ./:/var/www/html
-
+      - "8000:8000" # Laravel
+      - "5173:5173" # Vite Dev Server
+    command: sh -c "php artisan serve --host=0.0.0.0 --port=8000 & npm run dev -- --host 0.0.0.0"
 
 networks:
   prova_pleno:
-    external: true
+    driver: bridge
